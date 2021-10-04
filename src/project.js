@@ -20,16 +20,14 @@ let todos = [];
     }
     //returns the titles of each ToDo object
     const getToDoTitles = () => {
-        if (todos.length === 1) {
-        return todos[0].title 
-    }
-        else if (todos.length > 1){
-            let toDoList = ``
+            let toDoList = document.createElement('div')
             todos.forEach(todo => {
-                toDoList += `${todo.title} `
+                let singleTodo = document.createElement('p')
+                singleTodo.textContent = `Task: ${todo.title}   Due:${todo.dueDate}`;
+                toDoList.appendChild(singleTodo);
+                    
             }) 
-            return toDoList;
-        }
+            return toDoList;     
     }
 
 
